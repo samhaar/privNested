@@ -1,11 +1,13 @@
 import streamlit as st
 
 st.components.v1.html("""
+<input type="text" id="myText">
 <button id="setButton">set it</button>
 <button id="getButton">get it</button>
 <script>
     const set = () => {
-        window.localStorage.setItem('bob', 'hi there baby')
+        const txt = document.getElementById('myText').value
+        window.localStorage.setItem('bob', txt)
     }
     
     const get = () => {
